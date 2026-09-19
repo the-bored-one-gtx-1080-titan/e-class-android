@@ -26,11 +26,18 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
-    - name: Add Android Platform if missing
+    - name: Ensure www directory and index.html exist
       run: |
-        if [ ! -d "android" ]; then
-          npx cap add android
+        mkdir -p www
+        if [ ! -f "www/index.html" ]; then
+          echo "<!DOCTYPE html><html><head><title>App</title></head><body><h1>Hello e-class</h1></body></html>" > www/index.html
         fi
+
+    - name: Clean old Android folder if any
+      run: rm -rf android
+
+    - name: Add Android Platform
+      run: npx cap add android
 
     - name: Sync Capacitor Android
       run: npx cap sync android
