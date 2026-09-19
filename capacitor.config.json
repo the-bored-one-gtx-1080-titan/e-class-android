@@ -1,0 +1,6 @@
+{
+  "appId": "com.theboredone.eclass",
+  "appName": "e-class",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
