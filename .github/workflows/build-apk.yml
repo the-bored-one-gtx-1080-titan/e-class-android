@@ -41,8 +41,15 @@ jobs:
           chmod +x gradlew
           ./gradlew assembleRelease
 
+      - name: Sign APK
+        run: |
+          # Δημιουργία debug keystore για υπογραφή
+          keytool -genkey -v -keystore debug.keystore -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 10000 -passin pass:android -passout pass:android
+          # Υπογραφή του APK ώστε να είναι εγκαταστάσιμο
+          jarsigner -keystore debug.keystore -storepass android -keypass android android/app/build/outputs/apk/release/app-release-unsigned.apk androiddebugkey
+
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: app-release-apk
+          name: app-release-signed
           path: android/app/build/outputs/apk/release/app-release-unsigned.apk
