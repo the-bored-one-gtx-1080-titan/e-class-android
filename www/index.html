@@ -16,7 +16,7 @@
             --hover-bg: #1f242e;
             --modal-bg: #181b22;
             --footer-bg: #12151c;
-            --primary-accent: #ffffff; /* Blue changed to white in dark mode */
+            --primary-accent: #ffffff;
             --primary-accent-hover: #e2e8f0;
         }
 
@@ -1217,13 +1217,6 @@
             document.getElementById('item-modal').style.display = 'flex';
         }
 
-        function openFooterModal(title, htmlContent) {
-            document.getElementById('modal-title').innerText = title;
-            document.getElementById('modal-body').innerHTML = htmlContent;
-            document.getElementById('item-modal'].style.display = 'flex'; // Fix below syntax
-        }
-
-        // Safe openFooterModal definition
         function openFooterModal(title, htmlContent) {
             document.getElementById('modal-title').innerText = title;
             document.getElementById('modal-body').innerHTML = htmlContent;
