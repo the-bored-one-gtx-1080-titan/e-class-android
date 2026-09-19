@@ -24,8 +24,10 @@ jobs:
       - name: Generate App Assets (Icons & Splash)
         run: npx @capacitor/assets generate --iconAsset assets/icon.png || echo "Asset generation skipped or icon not found"
 
-      - name: Sync Capacitor Android
-        run: npx cap sync android
+      - name: Add Android Platform & Sync
+        run: |
+          npx cap add android
+          npx cap sync android
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
