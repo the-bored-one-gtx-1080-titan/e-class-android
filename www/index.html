@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-class Mobile</title>
     <style>
+        /* --- THEMES --- */
         [data-theme="dark"] {
             --bg-color: #0f1115;
             --card-bg: #181b22;
@@ -18,6 +19,7 @@
             --footer-bg: #12151c;
             --primary-accent: #ffffff;
             --primary-accent-hover: #e2e8f0;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
         }
 
         [data-theme="light"] {
@@ -33,6 +35,39 @@
             --footer-bg: #f1f5f9;
             --primary-accent: #0284c7;
             --primary-accent-hover: #0369a1;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+        }
+
+        [data-theme="retro"] {
+            --bg-color: #fdf6e2;
+            --card-bg: #f5ebce;
+            --text-main: #2b2b2b;
+            --text-secondary: #555555;
+            --border-color: #2b2b2b;
+            --navbar-bg: #2b2b2b;
+            --input-bg: #fffbf0;
+            --hover-bg: #ebdcb9;
+            --modal-bg: #f5ebce;
+            --footer-bg: #ebdcb9;
+            --primary-accent: #2b2b2b;
+            --primary-accent-hover: #444444;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        [data-theme="crazy"] {
+            --bg-color: #120024;
+            --card-bg: #280a42;
+            --text-main: #00ffcc;
+            --text-secondary: #ff007f;
+            --border-color: #ff007f;
+            --navbar-bg: #ff007f;
+            --input-bg: #120024;
+            --hover-bg: #3c0f65;
+            --modal-bg: #280a42;
+            --footer-bg: #120024;
+            --primary-accent: #00ffcc;
+            --primary-accent-hover: #00b399;
+            font-family: "Comic Sans MS", cursive, sans-serif;
         }
 
         :root {
@@ -41,7 +76,6 @@
         }
 
         body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif; 
             background: var(--bg-color); 
             margin: 0; 
             padding: 0; 
@@ -55,7 +89,7 @@
         
         .navbar { 
             background: var(--navbar-bg); 
-            color: white; 
+            color: #fff; 
             padding: 14px 20px; 
             display: flex; 
             justify-content: space-between; 
@@ -67,7 +101,6 @@
             font-size: 1.15rem; 
             font-weight: 600; 
             letter-spacing: -0.01em;
-            color: #fff; 
             cursor: pointer; 
         }
         
@@ -108,7 +141,6 @@
             display: flex; 
             justify-content: space-between;
             align-items: center; 
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
         }
         .profile-left { display: flex; align-items: center; gap: 14px; }
         .avatar { 
@@ -136,7 +168,6 @@
             font-size: 0.75rem;
             cursor: pointer;
             font-weight: 500;
-            transition: background 0.2s;
         }
         .role-btn:hover { background: var(--hover-bg); }
 
@@ -162,7 +193,6 @@
             border-radius: 16px; 
             border: 1px solid var(--border-color);
             margin-bottom: 20px; 
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
         }
         .card h3 { margin-top: 0; color: var(--text-main); font-size: 1.05rem; font-weight: 600; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
 
@@ -177,7 +207,6 @@
             border-radius: 10px; 
             font-size: 0.95rem; 
             color: var(--text-main);
-            transition: border-color 0.2s;
         }
         input:focus { outline: none; border-color: var(--text-secondary); }
 
@@ -206,13 +235,9 @@
             cursor: pointer; 
             text-align: center; 
             box-sizing: border-box;
-            transition: opacity 0.2s, transform 0.1s;
         }
-        .btn:active { transform: scale(0.99); }
         .btn-primary { background: var(--primary-accent); color: var(--bg-color); }
-        .btn-primary:hover { opacity: 0.9; }
         .btn-success { background: var(--success-color); color: white; }
-        .btn-success:hover { opacity: 0.9; }
 
         .btn-outline {
             background: transparent;
@@ -241,9 +266,8 @@
             border-radius: 12px; 
             border: 1px solid var(--border-color);
             cursor: pointer;
-            transition: background 0.2s, border-color 0.2s;
         }
-        .course-item:hover { background: var(--hover-bg); border-color: var(--text-secondary); }
+        .course-item:hover { background: var(--hover-bg); }
         .course-item strong { color: var(--text-main); font-size: 0.95rem; display: block; margin-bottom: 4px; font-weight: 600; }
         .course-item small { color: var(--text-secondary); display: block; }
 
@@ -268,13 +292,11 @@
             align-items: center;
             gap: 8px;
             cursor: pointer;
-            transition: background 0.2s, border-color 0.2s;
         }
-        .course-menu-item:hover { background: var(--hover-bg); border-color: var(--text-secondary); }
+        .course-menu-item:hover { background: var(--hover-bg); }
 
         .course-banner-img {
             width: 100%;
-            height: auto;
             border-radius: 10px;
             margin: 12px 0;
             border: 1px solid var(--border-color);
@@ -311,13 +333,12 @@
             border: 1px solid var(--border-color);
             border-radius: 10px;
             cursor: pointer;
-            transition: background 0.2s, border-color 0.2s;
         }
-        .clickable-item:hover { background: var(--hover-bg); border-color: var(--text-secondary); }
+        .clickable-item:hover { background: var(--hover-bg); }
         .clickable-item strong { color: var(--text-main); font-size: 0.88rem; display: block; margin-bottom: 2px; font-weight: 600; }
         .fake-date { font-size: 0.75rem; color: var(--text-secondary); display: block; margin-top: 4px; }
 
-        /* Footer styling */
+        /* Footer */
         .app-footer {
             background: var(--footer-bg);
             border-top: 1px solid var(--border-color);
@@ -343,7 +364,7 @@
         }
         .footer-links span:hover { opacity: 1; }
 
-        /* Modal Overlay */
+        /* Modal */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -378,14 +399,14 @@
         <div class="nav-right">
             <div class="user-badge" id="nav-username">ΠΜ</div>
             <button class="action-btn" id="lang-btn" onclick="toggleLanguage()">🇬🇷 EL</button>
-            <button class="action-btn" id="theme-btn" onclick="toggleTheme()">Θέμα</button>
-            <button class="action-btn hidden" id="nav-logout-btn" onclick="logout()" data-i18n="logout_btn">🚪</button>
+            <button class="action-btn" id="theme-btn" onclick="toggleTheme()">🌓 Θέμα</button>
+            <button class="action-btn hidden" id="nav-logout-btn" onclick="logout()">🚪</button>
         </div>
     </div>
 
     <div class="container">
 
-        <!-- Οθόνη Σύνδεσης -->
+        <!-- Login Screen -->
         <div id="login-screen" class="card">
             <h3 data-i18n="login_title">Σύνδεση στο e-class</h3>
             <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px;" data-i18n="login_subtitle">Συνδεθείτε με τα στοιχεία σας:</p>
@@ -401,7 +422,7 @@
             <button class="btn btn-primary" onclick="login()" data-i18n="login_btn">Σύνδεση</button>
         </div>
 
-        <!-- Κεντρικό Dashboard -->
+        <!-- Dashboard Screen -->
         <div id="dashboard-screen" class="hidden">
             <div class="profile-banner">
                 <div class="profile-left">
@@ -441,7 +462,7 @@
             </div>
         </div>
 
-        <!-- Οθόνη Προτύπου Μαθήματος -->
+        <!-- Course Detail Screen -->
         <div id="course-detail-screen" class="hidden">
             <div class="breadcrumb">
                 <span onclick="backToDashboard()" data-i18n="breadcrumb_home">Προσωπικός Χώρος</span> &gt; <span data-i18n="breadcrumb_course" style="text-decoration: none; color: var(--text-secondary);">ΠΡΟΤΥΠΟ ΜΑΘΗΜΑ</span>
@@ -499,7 +520,7 @@
         </div>
     </footer>
 
-    <!-- Popup Modal -->
+    <!-- Modal -->
     <div id="item-modal" class="modal-overlay" onclick="closeModal(event)">
         <div class="modal-card" onclick="event.stopPropagation()">
             <h3 id="modal-title">Τίτλος Λεπτομέρειας</h3>
@@ -511,7 +532,13 @@
     <script>
         let isTeacherMode = false;
         
-        const languages = ['el', 'en', 'pirate', 'de', 'fr', 'ro', 'moldovan', 'ar'];
+        // Themes configuration
+        const themes = ['dark', 'light', 'retro', 'crazy'];
+        const themeLabels = { dark: '🌓 Dark', light: '☀️ Light', retro: '📜 Retro', crazy: '⚡ Crazy' };
+        let currentThemeIndex = 0;
+
+        // Languages configuration
+        const languages = ['el', 'en', 'captain', 'de', 'fr', 'ro', 'md', 'ar'];
         let langIndex = 0;
         let currentLang = localStorage.getItem('eclass_lang') || 'el';
         langIndex = languages.indexOf(currentLang);
@@ -520,8 +547,6 @@
         const translations = {
             el: {
                 label: "🇬🇷 EL",
-                theme_btn: "Θέμα",
-                logout_btn: "🚪",
                 login_title: "Σύνδεση στο e-class",
                 login_subtitle: "Συνδεθείτε με τα στοιχεία σας:",
                 username_label: "Όνομα Χρήστη / Email",
@@ -551,12 +576,6 @@
                 menu_assignments: "📤 Εργασίες",
                 menu_messages: "✉️ Μηνύματα",
                 menu_wall: "💬 Τοίχος",
-                syllabus_btn_close: "▼ Περίγραμμα Μαθήματος",
-                syllabus_btn_open: "▲ Περίγραμμα Μαθήματος",
-                syllabus_1: "<strong>Ενότητα 1:</strong> Εισαγωγή στις μεταβλητές και τύπους δεδομένων.",
-                syllabus_2: "<strong>Ενότητα 2:</strong> Δομές ελέγχου ροής (If-Else, Loops).",
-                syllabus_3: "<strong>Ενότητα 3:</strong> Συναρτήσεις και τμηματικός προγραμματισμός.",
-                syllabus_4: "<strong>Ενότητα 4:</strong> Δομές δεδομένων και λίστες.",
                 back_to_courses: "Πίσω στα Μαθήματα",
                 close_btn: "Κλείσιμο",
                 footer_title: "e-class (remade android version) v1.0",
@@ -572,8 +591,6 @@
             },
             en: {
                 label: "🇬🇧 EN",
-                theme_btn: "Theme",
-                logout_btn: "🚪",
                 login_title: "Sign in to e-class",
                 login_subtitle: "Sign in with your credentials:",
                 username_label: "Username / Email",
@@ -603,12 +620,6 @@
                 menu_assignments: "📤 Assignments",
                 menu_messages: "✉️ Messages",
                 menu_wall: "💬 Wall",
-                syllabus_btn_close: "▼ Course Syllabus",
-                syllabus_btn_open: "▲ Course Syllabus",
-                syllabus_1: "<strong>Unit 1:</strong> Introduction to variables and data types.",
-                syllabus_2: "<strong>Unit 2:</strong> Control flow structures (If-Else, Loops).",
-                syllabus_3: "<strong>Unit 3:</strong> Functions and modular programming.",
-                syllabus_4: "<strong>Unit 4:</strong> Data structures and lists.",
                 back_to_courses: "Back to Courses",
                 close_btn: "Close",
                 footer_title: "e-class (remade android version) v1.0",
@@ -622,10 +633,8 @@
                 modal_terms_content: "<p>Independent open-source remake for educational purposes.</p>",
                 modal_privacy_content: "<p>Login and preference data are stored locally via localStorage.</p>"
             },
-            pirate: {
-                label: "🏴‍☠️ Pirate",
-                theme_btn: "Colors",
-                logout_btn: "🚪",
+            captain: {
+                label: "🏴‍☠️ Captain",
                 login_title: "Log into the Captain's e-class",
                 login_subtitle: "Enter yer secret code, matey:",
                 username_label: "Pirate Handle / Email",
@@ -655,12 +664,6 @@
                 menu_assignments: "📤 Bounties",
                 menu_messages: "✉️ Bottle Mail",
                 menu_wall: "💬 Tavern Wall",
-                syllabus_btn_close: "▼ Voyage Map",
-                syllabus_btn_open: "▲ Voyage Map",
-                syllabus_1: "<strong>Part 1:</strong> Hoist the variables.",
-                syllabus_2: "<strong>Part 2:</strong> Stormy loops and conditions.",
-                syllabus_3: "<strong>Part 3:</strong> Plundering functions.",
-                syllabus_4: "<strong>Part 4:</strong> Chests of data lists.",
                 back_to_courses: "Back to Port",
                 close_btn: "Avast!",
                 footer_title: "e-class (pirate droid version) v1.0",
@@ -676,13 +679,11 @@
             },
             de: {
                 label: "🇩🇪 DE",
-                theme_btn: "Thema",
-                logout_btn: "🚪",
                 login_title: "Anmeldung bei e-class",
-                login_subtitle: "Melden Sie sich mit Ihren Daten an:",
+                login_subtitle: "Melden Sie sich mit Ihren Zugangsdaten an:",
                 username_label: "Benutzername / E-Mail",
                 password_label: "Passwort",
-                error_msg: "Bitte füllen Sie die Felder aus.",
+                error_msg: "Bitte füllen Sie die Felder aus oder verwenden Sie 100100.",
                 login_btn: "Anmelden",
                 role_student: "Rolle: Schüler",
                 role_teacher: "Rolle: Lehrer / Admin",
@@ -693,273 +694,228 @@
                 my_courses: "Meine Kurse",
                 term_label: "Herbstsemester 2026",
                 course_title: "INFORMATIK (INF-101)",
-                course_sub: "Lehrer: Despina Valachi • Aktive Klasse",
+                course_sub: "Lehrer: Despina Valachi • Aktiver Bereich",
                 breadcrumb_home: "Persönlicher Bereich",
-                breadcrumb_course: "DEMO KURS",
+                breadcrumb_course: "DEMO-KURS",
                 course_main_title: "INFORMATIK",
                 course_code_teacher: "INF-101 - DESPINA VALACHI",
                 course_desc_title: "Kursbeschreibung",
-                course_desc_text: "Kurs für strukturiertes Programmieren und Algorithmen in Python und C++.",
+                course_desc_text: "Kurs für strukturiertes Programmieren, Algorithmen und Softwareentwicklung in Python und C++.",
                 course_options_title: "Kursoptionen",
                 menu_announcements: "🔔 Ankündigungen",
                 menu_exercises: "📁 Übungen",
                 menu_documents: "📄 Dokumente",
                 menu_assignments: "📤 Aufgaben",
                 menu_messages: "✉️ Nachrichten",
-                menu_wall: "💬 Wand",
-                syllabus_btn_close: "▼ Lehrplan",
-                syllabus_btn_open: "▲ Lehrplan",
-                syllabus_1: "<strong>Einheit 1:</strong> Einführung in Variablen.",
-                syllabus_2: "<strong>Einheit 2:</strong> Kontrollstrukturen (If-Else, Loops).",
-                syllabus_3: "<strong>Einheit 3:</strong> Funktionen.",
-                syllabus_4: "<strong>Einheit 4:</strong> Datenstrukturen und Listen.",
-                back_to_courses: "Zurück zu den Kursen",
+                menu_wall: "💬 Pinnwand",
+                back_to_courses: "Zurück zu Kursen",
                 close_btn: "Schließen",
                 footer_title: "e-class (remade android version) v1.0",
-                footer_author: "Erstellt von -the bored one-",
+                footer_author: "Made by -the bored one-",
                 footer_contact: "Kontakt",
                 footer_manual: "Handbuch",
                 footer_terms: "Bedingungen",
                 footer_privacy: "Datenschutz",
                 modal_contact_content: "<p>Für Support kontaktieren Sie uns über GitHub.</p>",
-                modal_manual_content: "<p><b>Schnellstart:</b><br>1. Anmelden.<br>2. Kurs wählen.<br>3. Registerkarten nutzen.</p>",
-                modal_terms_content: "<p>Unabhängiges Open-Source-Remake für Bildungszwecke.</p>",
-                modal_privacy_content: "<p>Daten werden lokal über localStorage gespeichert.</p>"
+                modal_manual_content: "<p><b>Schnellstart:</b><br>1. Anmelden.<br>2. Kurs wählen.</p>",
+                modal_terms_content: "<p>Open-Source-Remake für Bildungszwecke.</p>",
+                modal_privacy_content: "<p>Daten werden lokal gespeichert.</p>"
             },
             fr: {
                 label: "🇫🇷 FR",
-                theme_btn: "Thème",
-                logout_btn: "🚪",
                 login_title: "Connexion à e-class",
                 login_subtitle: "Connectez-vous avec vos identifiants :",
-                username_label: "Nom d'utilisateur / E-mail",
+                username_label: "Nom d'utilisateur / Email",
                 password_label: "Mot de passe",
-                error_msg: "Veuillez remplir les champs.",
+                error_msg: "Veuillez remplir les champs ou utiliser 100100.",
                 login_btn: "Se connecter",
                 role_student: "Rôle : Étudiant",
                 role_teacher: "Rôle : Enseignant",
                 role_toggle_btn: "Changer de rôle",
                 stat_courses: "Cours",
-                stat_tasks: "Devoirs",
+                stat_tasks: "En attente",
                 stat_msgs: "Messages",
-                my_courses: "Mes cours",
+                my_courses: "Mes Cours",
                 term_label: "Semestre d'automne 2026",
                 course_title: "INFORMATIQUE (INF-101)",
-                course_sub: "Professeur : Despina Valachi • Section active",
-                breadcrumb_home: "Espace personnel",
+                course_sub: "Enseignant : Despina Valachi • Section active",
+                breadcrumb_home: "Espace Personnel",
                 breadcrumb_course: "COURS DÉMO",
                 course_main_title: "INFORMATIQUE",
                 course_code_teacher: "INF-101 - DESPINA VALACHI",
-                course_desc_title: "Description du cours",
-                course_desc_text: "Programmation structurée, algorithmes et développement en Python et C++.",
-                course_options_title: "Options du cours",
+                course_desc_title: "Description du Cours",
+                course_desc_text: "Cours de programmation structurée, algorithmes et développement logiciel en Python et C++.",
+                course_options_title: "Options du Cours",
                 menu_announcements: "🔔 Annonces",
                 menu_exercises: "📁 Exercices",
                 menu_documents: "📄 Documents",
                 menu_assignments: "📤 Devoirs",
                 menu_messages: "✉️ Messages",
                 menu_wall: "💬 Mur",
-                syllabus_btn_close: "▼ Programme",
-                syllabus_btn_open: "▲ Programme",
-                syllabus_1: "<strong>Unité 1 :</strong> Introduction aux variables.",
-                syllabus_2: "<strong>Unité 2 :</strong> Structures de contrôle.",
-                syllabus_3: "<strong>Unité 3 :</strong> Fonctions.",
-                syllabus_4: "<strong>Unité 4 :</strong> Listes et structures de données.",
-                back_to_courses: "Retour aux cours",
+                back_to_courses: "Retour aux Cours",
                 close_btn: "Fermer",
                 footer_title: "e-class (remade android version) v1.0",
-                footer_author: "Créé par -the bored one-",
+                footer_author: "Made by -the bored one-",
                 footer_contact: "Contact",
                 footer_manual: "Manuel",
                 footer_terms: "Conditions",
                 footer_privacy: "Confidentialité",
                 modal_contact_content: "<p>Pour le support, contactez-nous via GitHub.</p>",
-                modal_manual_content: "<p><b>Guide rapide :</b><br>1. Connectez-vous.<br>2. Choisissez votre cours.</p>",
-                modal_terms_content: "<p>Version open-source indépendante à des fins éducatives.</p>",
-                modal_privacy_content: "<p>Les données sont stockées localement via localStorage.</p>"
+                modal_manual_content: "<p><b>Guide :</b><br>1. Connectez-vous.<br>2. Choisissez votre cours.</p>",
+                modal_terms_content: "<p>Remake open source à des fins éducatives.</p>",
+                modal_privacy_content: "<p>Les données sont stockées localement.</p>"
             },
             ro: {
                 label: "🇷🇴 RO",
-                theme_btn: "Temă",
-                logout_btn: "🚪",
                 login_title: "Autentificare e-class",
-                login_subtitle: "Conectați-vă cu datele Dvs.:",
-                username_label: "Nutilizator / E-mail",
+                login_subtitle: "Conectați-vous cu datele Dvs:",
+                username_label: "Utilizator / Email",
                 password_label: "Parolă",
-                error_msg: "Completați câmpurile sau introduceți parola de test.",
+                error_msg: "Completați câmpurile sau folosiți 100100.",
                 login_btn: "Autentificare",
                 role_student: "Rol: Student",
                 role_teacher: "Rol: Profesor",
-                role_toggle_btn: "Schimbă rolul",
+                role_toggle_btn: "Schimbă Rolul",
                 stat_courses: "Cursuri",
                 stat_tasks: "Sarcini",
                 stat_msgs: "Mesaje",
                 my_courses: "Cursurile mele",
-                term_label: "Semestrul 1 2026",
+                term_label: "Semestrul Toamnă 2026",
                 course_title: "INFORMATICĂ (INF-101)",
-                course_sub: "Profesor: Despina Valachi • Secțiune activă",
-                breadcrumb_home: "Spațiu personal",
+                course_sub: "Profesor: Despina Valachi",
+                breadcrumb_home: "Spațiu Personal",
                 breadcrumb_course: "CURS DEMO",
                 course_main_title: "INFORMATICĂ",
                 course_code_teacher: "INF-101 - DESPINA VALACHI",
-                course_desc_title: "Descriere curs",
-                course_desc_text: "Programare structurată, algoritmi și dezvoltare software în Python și C++.",
-                course_options_title: "Opțiuni curs",
+                course_desc_title: "Descriere Curs",
+                course_desc_text: "Curs de programare structurată și algoritmi în Python și C++.",
+                course_options_title: "Opțiuni Curs",
                 menu_announcements: "🔔 Anunțuri",
                 menu_exercises: "📁 Exerciții",
                 menu_documents: "📄 Documente",
-                menu_assignments: "📤 Sarcini",
+                menu_assignments: "📤 Teme",
                 menu_messages: "✉️ Mesaje",
-                menu_wall: "💬 Perete",
-                syllabus_btn_close: "▼ Programă",
-                syllabus_btn_open: "▲ Programă",
-                syllabus_1: "<strong>Unitatea 1:</strong> Introducere în variabile.",
-                syllabus_2: "<strong>Unitatea 2:</strong> Structuri de control.",
-                syllabus_3: "<strong>Unitatea 3:</strong> Funcții.",
-                syllabus_4: "<strong>Unitatea 4:</strong> Liste și structuri de date.",
-                back_to_courses: "Înapoi la cursuri",
+                menu_wall: "💬 Discuții",
+                back_to_courses: "Înapoi la Cursuri",
                 close_btn: "Închide",
                 footer_title: "e-class (remade android version) v1.0",
-                footer_author: "Creat de -the bored one-",
+                footer_author: "Made by -the bored one-",
                 footer_contact: "Contact",
                 footer_manual: "Manual",
                 footer_terms: "Termeni",
                 footer_privacy: "Confidențialitate",
-                modal_contact_content: "<p>Pentru asistență, contactați-ne pe GitHub.</p>",
-                modal_manual_content: "<p><b>Ghid rapid:</b><br>1. Conectați-vă.<br>2. Selectați cursul.</p>",
-                modal_terms_content: "<p>Versiune open-source independentă în scop educațional.</p>",
-                modal_privacy_content: "<p>Datele sunt stocate local prin localStorage.</p>"
+                modal_contact_content: "<p>Contact prin GitHub.</p>",
+                modal_manual_content: "<p><b>Ghid:</b><br>1. Autentificare.<br>2. Alegeți cursul.</p>",
+                modal_terms_content: "<p>Proiect open-source educațional.</p>",
+                modal_privacy_content: "<p>Datele sunt salvate local.</p>"
             },
-            moldovan: {
+            md: {
                 label: "🇲🇩 MD",
-                theme_btn: "Temă",
-                logout_btn: "🚪",
-                login_title: "Intrare în e-class",
-                login_subtitle: "Logați-vă cu datele voastre:",
-                username_label: "Nume de utilizator / E-mail",
+                login_title: "Autentificare e-class",
+                login_subtitle: "Conectați-vă cu datele Dvs:",
+                username_label: "Nume de utilizator",
                 password_label: "Parola",
-                error_msg: "Completați toate câmpurile sau parola de test.",
-                login_btn: "Intră",
-                role_student: "Rol: Elev / Student",
-                role_teacher: "Rol: Profesor / Admin",
-                role_toggle_btn: "Schimbă rolul",
+                error_msg: "Completați cîmpurile sau folosiți 100100.",
+                login_btn: "Intrare",
+                role_student: "Rol: Student",
+                role_teacher: "Rol: Profesor",
+                role_toggle_btn: "Schimbă Rolul",
                 stat_courses: "Cursuri",
-                stat_tasks: "De făcut",
+                stat_tasks: "Sarcini",
                 stat_msgs: "Mesaje",
                 my_courses: "Cursurile mele",
-                term_label: "Semestrul I 2026",
+                term_label: "Semestrul de toamnă 2026",
                 course_title: "INFORMATICĂ (INF-101)",
-                course_sub: "Profesor: Despina Valachi • Clasa activă",
-                breadcrumb_home: "Pagina personală",
-                breadcrumb_course: "CURS DE PROBĂ",
+                course_sub: "Profesor: Despina Valachi",
+                breadcrumb_home: "Spațiu Personal",
+                breadcrumb_course: "CURS DEMO",
                 course_main_title: "INFORMATICĂ",
                 course_code_teacher: "INF-101 - DESPINA VALACHI",
-                course_desc_title: "Despre curs",
-                course_desc_text: "Programare structurată, algoritmi și creare de aplicații în Python și C++.",
-                course_options_title: "Opțiunile cursului",
+                course_desc_title: "Descriere Curs",
+                course_desc_text: "Curs de programare structurată și algoritmi.",
+                course_options_title: "Opțiuni Curs",
                 menu_announcements: "🔔 Anunțuri",
                 menu_exercises: "📁 Exerciții",
                 menu_documents: "📄 Documente",
-                menu_assignments: "📤 Sarcini",
+                menu_assignments: "📤 Teme",
                 menu_messages: "✉️ Mesaje",
-                menu_wall: "💬 Panou",
-                syllabus_btn_close: "▼ Planul cursului",
-                syllabus_btn_open: "▲ Planul cursului",
-                syllabus_1: "<strong>Modulul 1:</strong> Variabile și tipuri de date.",
-                syllabus_2: "<strong>Modulul 2:</strong> Structuri de control.",
-                syllabus_3: "<strong>Modulul 3:</strong> Funcții și subprograme.",
-                syllabus_4: "<strong>Modulul 4:</strong> Liste și structuri.",
-                back_to_courses: "Înapoi la cursuri",
-                close_btn: "Închidere",
-                footer_title: "e-class (versiune android refăcută) v1.0",
-                footer_author: "Făcut de -the bored one-",
+                menu_wall: "💬 Discuții",
+                back_to_courses: "Înapoi la Cursuri",
+                close_btn: "Închide",
+                footer_title: "e-class (remade android version) v1.0",
+                footer_author: "Made by -the bored one-",
                 footer_contact: "Contact",
                 footer_manual: "Manual",
                 footer_terms: "Termeni",
-                footer_privacy: "Politica de confidențialitate",
-                modal_contact_content: "<p>Pentru întrebări, luați legătura prin GitHub.</p>",
-                modal_manual_content: "<p><b>Ghid simplu:</b><br>1. Intrați în cont.<br>2. Alegeți cursul.</p>",
-                modal_terms_content: "<p>Versiune independentă open-source creată pentru studiu.</p>",
-                modal_privacy_content: "<p>Datele se păstrează local pe dispozitiv cu ajutorul la localStorage.</p>"
+                footer_privacy: "Confidențialitate",
+                modal_contact_content: "<p>Contact prin GitHub.</p>",
+                modal_manual_content: "<p><b>Ghid:</b><br>1. Autentificare.</p>",
+                modal_terms_content: "<p>Proiect educațional.</p>",
+                modal_privacy_content: "<p>Datele sunt stocate local.</p>"
             },
             ar: {
                 label: "🇸🇦 AR",
-                theme_btn: "المظهر",
-                logout_btn: "🚪",
                 login_title: "تسجيل الدخول إلى e-class",
-                login_subtitle: "قم بتسجيل الدخول باستخدام بياناتك:",
-                username_label: "اسم User / البريد",
+                login_subtitle: "قم بتسجيل الدخول باستخدام بيانات الاعتماد الخاصة بك:",
+                username_label: "اسم المستخدم / البريد الإلكتروني",
                 password_label: "كلمة المرور",
-                error_msg: "يرجى ملء الحقول المطلوبة.",
-                login_btn: "دخول",
+                error_msg: "يرجى ملء الحقول أو استخدام رمز الاختبار 100100.",
+                login_btn: "تسجيل الدخول",
                 role_student: "الدور: طالب",
-                role_teacher: "الدور: معلم / مشرف",
+                role_teacher: "الدور: معلم",
                 role_toggle_btn: "تبديل الدور",
-                stat_courses: "المقررات",
-                stat_tasks: "مهام معلقة",
+                stat_courses: "المقُررات",
+                stat_tasks: "المهام",
                 stat_msgs: "الرسائل",
                 my_courses: "مقرراتي",
-                term_label: "الفصل الدراسي 2026",
+                term_label: "فصل الخريف ٢٠٢٦",
                 course_title: "علوم الحاسب (INF-101)",
-                course_sub: "المعلم: ديسبينا فالاشي • الشعبة النشطة",
-                breadcrumb_home: "الصفحة الشخصية",
-                breadcrumb_course: "المقرر التجريبي",
-                course_main_title: "علوم الحاسب الآلي",
-                course_code_teacher: "INF-101 - ديسبينا فالاشي",
+                course_sub: "المعلم: ديسبينا فالاتشي",
+                breadcrumb_home: "المساحة الشخصية",
+                breadcrumb_course: "مقرر تجريبي",
+                course_main_title: "علوم الحاسب",
+                course_code_teacher: "INF-101 - ديسبينا فالاتشي",
                 course_desc_title: "وصف المقرر",
-                course_desc_text: "مقرر البرمجة المهيكلة والخوارزميات وتطوير البرمجيات بلغة Python و C++.",
+                course_desc_text: "مقرر البرمجة المهيكلة والخوارزميات وتطوير البرمجيات.",
                 course_options_title: "خيارات المقرر",
                 menu_announcements: "🔔 الإعلانات",
                 menu_exercises: "📁 التمارين",
                 menu_documents: "📄 المستندات",
                 menu_assignments: "📤 الواجبات",
                 menu_messages: "✉️ الرسائل",
-                menu_wall: "💬 حائط النقاش",
-                syllabus_btn_close: "▼ منهج المقرر",
-                syllabus_btn_open: "▲ منهج المقرر",
-                syllabus_1: "<strong>الوحدة 1:</strong> مقدمة في المتغيرات وأنواع البيانات.",
-                syllabus_2: "<strong>الوحدة 2:</strong> هياكل التحكم والتدفق.",
-                syllabus_3: "<strong>الوحدة 3:</strong> الدوال والبرمجة المعيارية.",
-                syllabus_4: "<strong>الوحدة 4:</strong> هياكل البيانات والقوائم.",
-                back_to_courses: "العودة للمقررات",
+                menu_wall: "💬 الحائط",
+                back_to_courses: "العودة إلى المقررات",
                 close_btn: "إغلاق",
-                footer_title: "e-class (نسخة أندرويد مطورة) v1.0",
-                footer_author: "صُنع بواسطة -the bored one-",
+                footer_title: "e-class (remade android version) v1.0",
+                footer_author: "Made by -the bored one-",
                 footer_contact: "اتصل بنا",
                 footer_manual: "الدليل",
                 footer_terms: "الشروط",
-                footer_privacy: "سياسة الخصوصية",
-                modal_contact_content: "<p>للدعم أو الإبلاغ عن أخطاء، تواصل معنا عبر GitHub.</p>",
-                modal_manual_content: "<p><b>دليل البدء السريع:</b><br>1. سجل الدخول.<br>2. اختر مقررك.<br>3. تصفح الأقسام.</p>",
-                modal_terms_content: "<p>نسخة مستقلة مفتوحة المصدر لأغراض تعليمية وشخصية.</p>",
-                modal_privacy_content: "<p>يتم تخزين بيانات الجلسة والتفضيلات محلياً عبر localStorage.</p>"
+                footer_privacy: "الخصوصية",
+                modal_contact_content: "<p>للدعم الفني، تواصل معنا عبر GitHub.</p>",
+                modal_manual_content: "<p><b>دليل البدء السريع:</b><br>١. سجل الدخول.<br>٢. اختر مقررك.</p>",
+                modal_terms_content: "<p>نسخة مفتوحة المصدر لأغراض تعليمية.</p>",
+                modal_privacy_content: "<p>يتم تخزين البيانات محلياً.</p>"
             }
         };
 
         let wallPosts = [
-            { title: 'Nikos_P: "Παιδιά ξέρει κανείς πώς λύνουμε την άσκηση 3?"', date: 'Χθες, 19:40', detail: 'Nikos_P: Παιδιά ξέρει κανείς πώς λύνουμε την άσκηση 3?' }
+            { title: 'Nikos_P: "Πώς λύνουμε την άσκηση 3?"', date: 'Χθες, 19:40', detail: 'Nikos_P: Πώς λύνουμε την άσκηση 3;' }
         ];
 
         window.onload = function() {
-            const savedTheme = localStorage.getItem('eclass_theme') || 'dark';
-            setTheme(savedTheme);
             applyLanguage(currentLang);
-
             const savedUser = localStorage.getItem('eclass_user');
             if (savedUser) {
                 showDashboard(savedUser);
             }
         };
 
-        function setTheme(theme) {
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('eclass_theme', theme);
-        }
-
         function toggleTheme() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            setTheme(newTheme);
+            currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+            const chosenTheme = themes[currentThemeIndex];
+            document.documentElement.setAttribute('data-theme', chosenTheme);
+            document.getElementById('theme-btn').innerText = themeLabels[chosenTheme];
         }
 
         function toggleLanguage() {
@@ -970,15 +926,9 @@
         }
 
         function applyLanguage(lang) {
-            const t = translations[lang];
+            const t = translations[lang] || translations['el'];
             document.getElementById('lang-btn').innerText = t.label;
             
-            if (lang === 'ar') {
-                document.documentElement.setAttribute('dir', 'rtl');
-            } else {
-                document.documentElement.setAttribute('dir', 'ltr');
-            }
-
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (t[key]) {
@@ -1062,7 +1012,6 @@
             document.getElementById('course-detail-screen').classList.remove('hidden');
             document.getElementById('dynamic-section-box').style.display = 'none';
             document.getElementById('syllabus-box').style.display = 'none';
-            document.getElementById('syllabus-btn').innerHTML = `<span>▼ ${translations[currentLang].syllabus_btn_close.replace('▼ ', '')}</span><span>⌄</span>`;
         }
 
         function backToDashboard() {
@@ -1072,15 +1021,10 @@
 
         function toggleSyllabus() {
             const box = document.getElementById('syllabus-box');
-            const btn = document.getElementById('syllabus-btn');
-            const t = translations[currentLang];
-            
             if (box.style.display === 'block') {
                 box.style.display = 'none';
-                btn.innerHTML = `<span>▼ ${t.syllabus_btn_close.replace('▼ ', '')}</span><span>⌄</span>`;
             } else {
                 box.style.display = 'block';
-                btn.innerHTML = `<span>▲ ${t.syllabus_btn_open.replace('▲ ', '')}</span><span>⌃</span>`;
             }
         }
 
@@ -1095,34 +1039,30 @@
             let items = [];
 
             if (type === 'announcements') {
-                title.innerText = translations[currentLang].menu_announcements;
-                items = [{ title: 'Room/Class Update', date: '18 Sep 2026', detail: 'Multimedia room notice.' }];
+                title.innerText = "🔔 Ανακοινώσεις Μαθήματος";
+                items = [{ title: 'Αλλαγή αιθουσών εργαστηρίου', date: '18 Σεπ 2026', detail: 'Το επόμενο μάθημα θα γίνει στην αίθουσα Υ/Η 2.' }];
             } else if (type === 'exercises') {
-                title.innerText = translations[currentLang].menu_exercises;
-                items = [{ title: 'Lab_Guide_Python.pdf (2.4 MB)', date: '12 Sep 2026', detail: 'Python Guide.', isDownload: true, fileName: 'Lab_Guide_Python.pdf' }];
+                title.innerText = "📁 Ασκήσεις και Υλικό";
+                items = [{ title: 'Lab_Guide_Python.pdf', date: '12 Σεπ 2026', detail: 'Οδηγός εργαστηρίου Python.', isDownload: true, fileName: 'Lab_Guide_Python.pdf' }];
             } else if (type === 'documents') {
-                title.innerText = translations[currentLang].menu_documents;
-                items = [
-                    { title: '📁 Lecture Theory Folder', date: '4 files', detail: 'Slides archive.' },
-                    { title: '📄 Syllabus_2026.pdf (1.2 MB)', date: 'Syllabus', detail: 'Course program.', isDownload: true, fileName: 'Syllabus_2026.pdf' }
-                ];
+                title.innerText = "📄 Έγγραφα Θεωρίας";
+                items = [{ title: 'Συλλογή διαφανειών Ενότητας 1', date: '4 αρχεία', detail: 'Αρχειοθετημένες διαφάνειες θεωρίας.' }];
             } else if (type === 'assignments') {
-                title.innerText = translations[currentLang].menu_assignments;
-                items = [{ title: 'Assignment 1: Search Algorithms', date: '25 Sep 2026', detail: 'Binary search task implementation.', isAssignment: true }];
+                title.innerText = "📤 Υποβολές Εργασιών";
+                items = [{ title: 'Εργασία 1: Αλγόριθμοι Αναζήτησης', date: '25 Σεπ 2026', detail: 'Υλοποίηση δυαδικής αναζήτησης σε Python.', isAssignment: true }];
             } else if (type === 'messages') {
-                title.innerText = translations[currentLang].menu_messages;
-                items = [{ title: 'From: Despina Valachi', date: '17 Sep 2026', detail: 'Please finish the assignments.' }];
+                title.innerText = "✉️ Προσωπικά Μηνύματα";
+                items = [{ title: 'Από: Δέσποινα Βαλάχη', date: '17 Σεπ 2026', detail: 'Παρακαλώ ολοκληρώστε τις ασκήσεις εγκαίρως.' }];
             } else if (type === 'wall') {
-                title.innerText = translations[currentLang].menu_wall;
+                title.innerText = "💬 Τοίχος Συζητήσεων";
                 
                 const formDiv = document.createElement('div');
                 formDiv.style.marginBottom = '12px';
                 formDiv.innerHTML = `
-                    <textarea id="wall-input" placeholder="..." rows="2"></textarea>
-                    <button class="btn btn-primary" style="margin-top: 8px; padding: 10px;" onclick="postToWall()">Post</button>
+                    <textarea id="wall-input" placeholder="Γράψτε μήνυμα στη συζήτηση..." rows="2"></textarea>
+                    <button class="btn btn-primary" style="margin-top: 6px; padding: 10px;" onclick="postToWall()">Δημοσίευση</button>
                 `;
                 content.appendChild(formDiv);
-
                 items = wallPosts;
             }
 
@@ -1135,7 +1075,7 @@
                 
                 const span = document.createElement('span');
                 span.className = 'fake-date';
-                span.innerText = item.date;
+                span.innerText = item.date || 'Σήμερα';
                 
                 div.appendChild(strong);
                 div.appendChild(span);
@@ -1160,7 +1100,7 @@
             if (!text) return;
             wallPosts.unshift({
                 title: 'PETROS: "' + text + '"',
-                date: 'Just now',
+                date: 'Μόλις τώρα',
                 detail: 'PETROS: ' + text
             });
             input.value = '';
@@ -1170,18 +1110,17 @@
         function openDownloadModal(title, fileName) {
             document.getElementById('modal-title').innerText = title;
             const body = document.getElementById('modal-body');
-            body.innerHTML = `<p>Download <b>${fileName}</b>?</p>`;
+            body.innerHTML = `<p>Λήψη αρχείου <b>${fileName}</b>;</p>`;
 
             const dlBtn = document.createElement('button');
             dlBtn.className = 'btn btn-success';
-            dlBtn.innerText = 'Download File ✓';
+            dlBtn.innerText = 'Λήψη αρχείου';
             dlBtn.onclick = function() {
-                dlBtn.innerText = 'Downloaded! ✓';
+                dlBtn.innerText = 'Λήφθηκε επιτυχώς';
                 dlBtn.disabled = true;
                 setTimeout(closeModalBtn, 1200);
             };
             body.appendChild(dlBtn);
-
             document.getElementById('item-modal').style.display = 'flex';
         }
 
@@ -1195,19 +1134,13 @@
 
             const subBtn = document.createElement('button');
             subBtn.className = 'btn btn-primary';
-            subBtn.innerText = 'Submit Assignment';
+            subBtn.innerText = 'Υποβολή Εργασίας';
             subBtn.onclick = function() {
-                const fileInput = document.getElementById('homework-file');
-                if (fileInput.files.length === 0) {
-                    alert('Select a file first!');
-                    return;
-                }
-                subBtn.innerText = 'Submitted successfully! ✓';
+                subBtn.innerText = 'Υποβλήθηκε επιτυχώς';
                 subBtn.disabled = true;
                 setTimeout(closeModalBtn, 1500);
             };
             body.appendChild(subBtn);
-
             document.getElementById('item-modal').style.display = 'flex';
         }
 
